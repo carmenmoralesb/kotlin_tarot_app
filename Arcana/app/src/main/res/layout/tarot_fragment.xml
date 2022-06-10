@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  tools:context=".core.ui.TarotFragment">
+
+  <TextView
+    android:id="@+id/title_home"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/jost_bold"
+    android:layout_marginTop="20dp"
+    android:text="Tarot reader"
+    android:textColor="@color/black"
+    android:textSize="28sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:id="@+id/description_title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="16dp"
+    android:fontFamily="@font/frank_ruhl_regular"
+    android:layout_marginTop="8dp"
+    android:gravity="center"
+    android:text="Think about your question before flip the cards ..."
+    android:textColor="@color/black"
+    android:textSize="16sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/title_home"
+    app:layout_constraintStart_toStartOf="parent" />
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/linearLayoutCompat"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/description_title">
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/card_one"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:src="@drawable/ic_two_of_cups" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/card_two"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:src="@drawable/ic_two_of_cups" />
+
+  </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+  <androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/card_three"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_marginStart="150dp"
+    android:layout_marginTop="20dp"
+    android:src="@drawable/ic_two_of_cups"
+    app:layout_constraintEnd_toEndOf="@+id/linearLayoutCompat"
+    app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
+  <androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/card_four"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_marginTop="20dp"
+    android:src="@drawable/ic_two_of_cups"
+    app:layout_constraintEnd_toStartOf="@+id/card_three"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="@+id/linearLayoutCompat"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
+  <com.google.android.material.button.MaterialButton
+    android:id="@+id/button_go_to_lecture"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="176dp"
+    app:backgroundTint="@color/pink_light"
+    android:text="Go to my read!"
+    android:textColor="@color/black"
+    android:fontFamily="@font/jost_bold"
+    app:cornerRadius="10dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
+  <include
+    android:id="@+id/spinner"
+    android:layout_height="0dp"
+    android:layout_width="match_parent"
+    app:layout_constraintTop_toBottomOf="@id/title_home"
+    app:layout_constraintBottom_toBottomOf="parent"
+    layout="@layout/loading"/>
+
+  <include
+    android:id="@+id/error_screen"
+    layout="@layout/loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintTop_toBottomOf="@id/title_home"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

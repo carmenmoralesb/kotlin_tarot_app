@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_marginTop="20dp"
+  android:paddingBottom="8dp"
+  android:background="@color/white">
+
+  <com.google.android.material.imageview.ShapeableImageView
+    android:id="@+id/imageViewPhoto"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:padding="5dp"
+    app:strokeWidth="8dp"
+    app:strokeColor="@color/pink_salmon"
+    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/aries_circle_icon"
+    android:layout_margin="8dp"
+    />
+
+  <TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/frank_ruhl_medium"
+    android:text="Aries"
+    android:textSize="16sp"
+    app:layout_constraintEnd_toEndOf="@+id/imageViewPhoto"
+    app:layout_constraintStart_toStartOf="@+id/imageViewPhoto"
+    app:layout_constraintTop_toBottomOf="@+id/imageViewPhoto" />
+
+  <TextView
+    android:id="@+id/text_date"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/frank_ruhl_medium"
+    android:text="(Mar 21-Apr 19)"
+    android:textSize="16sp"
+    app:layout_constraintEnd_toEndOf="@+id/imageViewPhoto"
+    app:layout_constraintStart_toStartOf="@+id/imageViewPhoto"
+    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

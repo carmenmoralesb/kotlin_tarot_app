@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="TitleText" parent="@android:style/Widget.TextView">
+    <item name="android:textSize">50dp</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="EntryText" parent="@android:style/Widget.TextView">
+    <item name="android:textSize">20dp</item>
+    <item name="android:textColor">@color/white</item>
+  </style>
+
+  <style name="ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded" parent="">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">8dp</item>
+  </style>
+
+  <style name="ExpandedAppBar" parent="@android:style/TextAppearance.Medium">
+    <item name="android:textSize">20sp</item>
+    <item name="android:padding">28dp</item>
+    <item name="android:background">@color/pink_light</item>
+    <item name="android:textColor">@color/pink_salmon</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:fontFamily">@font/jost_bold</item>
+  </style>
+
+  <style name="CollapsedAppBar" parent="@android:style/TextAppearance.Medium">
+    <item name="android:textSize">24sp</item>
+    <item name="android:textColor">@color/pink_salmon</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:fontFamily">@font/jost_bold</item>
+  </style>
+
+  <style name="buttomShapeRectangle">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">0dp</item>
+  </style>
+
+  <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+    <item name="cornerSize">50%</item>
+  </style>
+</resources>

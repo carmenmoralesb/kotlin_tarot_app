@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="pink_light">#f7c8c4</color>
+  <color name="pink_salmon">#d26060</color>
+  <color name="pink_darker">#cc7a7a</color>
+  <color name="terracota_darker">#d2453c</color>
+  <color name="black">#222222</color>
+  <color name="white">#FFFFFFFF</color>
+
+
+  <!-- HOROSCOPE COLORS -->
+  <color name="taurus">#e7f0e0</color>
+  <color name="capricorn">#e7f0e0</color>
+  <color name="aries">#f7eff9</color>
+  <color name="gemini">#fffbe3</color>
+  <color name="cancer">#ecfbf3</color>
+  <color name="pisces">#f4fcf8</color>
+  <color name="scorpio">#e2efef</color>
+  <color name="virgo">#f7fcf9</color>
+  <color name="aquarius">#e9f6f9</color>
+  <color name="leo">#fdf7ef</color>
+  <color name="libra">#fffdf9</color>
+  <color name="sagittarius">#fffbe7</color>
+</resources>

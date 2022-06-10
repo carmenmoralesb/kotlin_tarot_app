@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@+id/main_nav_graph"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  app:startDestination="@+id/HomeFragment">
+
+  <action
+    android:id="@+id/goToHome"
+    app:destination="@id/HomeFragment" />
+
+  <action
+    android:id="@+id/goToTarot"
+    app:destination="@id/TarotFragment" />
+
+  <action
+    android:id="@+id/goToHoroscopeDetail"
+    app:destination="@id/HoroscopeDetailFragment">
+
+    <argument
+      android:name="NAME"
+      app:argType="string" />
+
+  </action>
+
+  <fragment
+    android:id="@+id/HomeFragment"
+    android:name="es.carmenapps.arcana.core.ui.HomeFragment"
+    tools:layout="@layout/fragment_home" />
+
+  <fragment
+    android:id="@+id/HoroscopeDetailFragment"
+    android:name="es.carmenapps.arcana.core.ui.FragmentDetailHoroscope"
+    tools:layout="@layout/fragment_detail_horoscope">
+
+    <argument
+      android:name="NAME"
+      app:argType="string" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/TarotFragment"
+    android:name="es.carmenapps.arcana.core.ui.TarotFragment"
+    tools:layout="@layout/tarot_fragment" />
+
+  <fragment
+    android:id="@+id/TarotLectureFragment"
+    android:name="es.carmenapps.arcana.core.ui.TarotLectureFragment"
+    tools:layout="@layout/tarot_lecture_fragment" />
+
+</navigation>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:id="@+id/HomeFragment"
+    android:icon="@drawable/moon"
+    android:title="@string/title_home" />
+
+  <item
+    android:id="@+id/TarotFragment"
+    android:icon="@drawable/tarot"
+    android:title="@string/title_tarot" />
+
+  <item
+    android:id="@+id/navigation_notifications"
+    android:icon="@android:drawable/ic_menu_help"
+    android:title="@string/title_horoscope" />
+
+</menu>
