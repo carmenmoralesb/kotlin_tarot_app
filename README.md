@@ -12,7 +12,7 @@ Arcana is a little app made with Kotlin & using modern CLEAN architecture, navig
 - ✨MAGIC!✨
 
 ![Alt text](/phone_screen.png "Optional Title")
-![Alt text](//phone_screen2.png "Optional Title")
+![Alt text](/phone_screen2.png "Optional Title")
 
 ### List of made & to do's ✌
 
