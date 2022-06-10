@@ -11,8 +11,8 @@ Arcana is a little app made with Kotlin & using modern CLEAN architecture, navig
 - Make tarot read & get aknowledge about the cards!
 - ✨MAGIC!✨
 
-<img src="phone_screen.png" width="350" height="800">
-<img src="phone_screen2.png" width="350" height="800">
+<img src="phone_screen.png" width="400" height="800">
+<img src="phone_screen2.png" width="400" height="800">
 
 ### List of made & to do's ✌
 
@@ -26,11 +26,11 @@ Arcana is a little app made with Kotlin & using modern CLEAN architecture, navig
 
 Arcana uses a number of open source projects to work properly:
 
-- [Kotlin] -Write better Android apps faster with Kotlin. Kotlin is a modern statically typed programming language used by over 60% of professional Android developers!
-- [Dagger Hilt] - Hilt provides a standard way to incorporate Dagger dependency injection into an Android application.
-- [Retrofit] - Retrofit turns your HTTP API into a Java interface!
-- [Navigation Components] - The Navigation Architecture Component simplifies navigation implementation while also assisting you in visualizing your app’s navigation flow. The library offers a variety of advantages, including:
-- [Moshi] - Moshi is a modern JSON library for Android, Java and Kotlin. It makes it easy to parse JSON into Java and Kotlin classes
+- `[Kotlin]` -Write better Android apps faster with Kotlin. Kotlin is a modern statically typed programming language used by over 60% of professional Android developers!
+- `[Dagger Hilt]` - Hilt provides a standard way to incorporate Dagger dependency injection into an Android application.
+- `[Retrofit]` - Retrofit turns your HTTP API into a Java interface!
+- `[Navigation Components]` - The Navigation Architecture Component simplifies navigation implementation while also assisting you in visualizing your app’s navigation flow. The library offers a variety of advantages, including:
+- `[Moshi]` - Moshi is a modern JSON library for Android, Java and Kotlin. It makes it easy to parse JSON into Java and Kotlin classes
 
 ## License
 
