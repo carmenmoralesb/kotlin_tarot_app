@@ -11,8 +11,9 @@ Arcana is a little app made with Kotlin & using modern CLEAN architecture, navig
 - Make tarot read & get aknowledge about the cards!
 - ✨MAGIC!✨
 
-![Alt text](/phone_screen.png "Optional Title")
-![Alt text](/phone_screen2.png "Optional Title")
+Screen example             |  Screen example
+:-------------------------:|:-------------------------:
+![](/phone_screen.png )  |  ![](/phone_screen2.png)
 
 ### List of made & to do's ✌
 
@@ -20,6 +21,7 @@ Arcana is a little app made with Kotlin & using modern CLEAN architecture, navig
 - [x] Detail of horoscope with characteristics, defenses & defects
 - [x] Tarot reads with arcana cards
 - [ ] Detail of tarot cards with information
+- [ ] Dark Mode
 - [ ] ...& more!
 
 ## Tech 💻
