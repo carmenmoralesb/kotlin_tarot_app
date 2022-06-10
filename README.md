@@ -10,7 +10,7 @@ Arcana is a little app made with Kotlin & using modern CLEAN architecture, navig
 - Read your horoscope & know yourself
 - Make tarot read & get aknowledge about the cards!
 - ✨MAGIC!✨
--
+
 ![Alt text](/phone_screen.png "Optional Title")
 ![Alt text](//phone_screen2.png "Optional Title")
 
