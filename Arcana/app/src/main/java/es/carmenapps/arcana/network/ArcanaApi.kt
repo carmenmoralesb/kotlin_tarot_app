@@ -22,5 +22,5 @@ interface ArcanaApi {
   suspend fun getCard(@Path("id") id: Int): ArcanaCardDTO
 
   @GET("${ARCANA_URL_CARDS}random")
-  suspend fun getRandomCards(@Query(value = "nhit", encoded = true) id: Int): TarotHitDTO
+  suspend fun getRandomCards(@Query(value = "n", encoded = true) id: Int): TarotHitDTO
 }

@@ -41,10 +41,15 @@ class TarotLectureAdapter(
       listener: (TarotLectureAdapterAction) -> Unit
     ) {
 
-      val urlImage = ""
+      binding.titleCardName.text = item.name
+      binding.cardMeaningText.text = item.meaning
+
+      if (item.isReversed) {
+        binding.imageView.rotation = 180F
+      }
 
       Glide.with(itemView.context)
-        .load(urlImage)
+        .load(item.urlImage)
         .centerInside()
         .into(binding.imageView)
     }

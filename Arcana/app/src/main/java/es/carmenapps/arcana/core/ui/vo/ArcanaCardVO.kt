@@ -5,7 +5,9 @@ data class TarotHitVO(
 )
 
 data class ArcanaCardVO(
+  val urlImage: String,
   val name: String,
   val description: String,
-  val meaning: String
+  val meaning: String,
+  val isReversed: Boolean
 )

@@ -33,6 +33,8 @@ fun ArcanaCardBO.toVo(): ArcanaCardVO {
   return ArcanaCardVO(
     description = this.description,
     name = this.name,
+    isReversed = isRev,
+    urlImage = this.image,
     meaning = if (isRev) {
       this.meaningRev
     } else this.meaningUp

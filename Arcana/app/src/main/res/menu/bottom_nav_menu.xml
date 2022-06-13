@@ -11,9 +11,4 @@
     android:icon="@drawable/tarot"
     android:title="@string/title_tarot" />
 
-  <item
-    android:id="@+id/navigation_notifications"
-    android:icon="@android:drawable/ic_menu_help"
-    android:title="@string/title_horoscope" />
-
 </menu>

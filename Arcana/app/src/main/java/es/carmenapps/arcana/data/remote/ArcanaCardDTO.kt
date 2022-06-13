@@ -38,7 +38,7 @@ fun TarotHitDTO.toBo(): TarotHitBO {
 fun ArcanaCardDTO.toBo(): ArcanaCardBO {
   return ArcanaCardBO(
     name = this.name,
-    image = getCardPhoto(this.name_short),
+    image = "https://cdn.thetarotlady.com/wp-content/uploads/2018/12/${getCardPhoto(this.name_short)}.jpg",
     value = this.value,
     suit = this.suit ?: "",
     type = this.type,

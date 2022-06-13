@@ -51,11 +51,12 @@ class TarotLectureFragment : Fragment() {
 
   override fun onResume() {
     super.onResume()
+    initRecycler()
+    initViewModel()
   }
 
   override fun onDestroyView() {
     super.onDestroyView()
-    // viewModel.randomUrls.clear()
     binding = null
   }
 
@@ -73,7 +74,6 @@ class TarotLectureFragment : Fragment() {
 
   private fun initRecycler() {
     val linearLayoutManager = LinearLayoutManager(context)
-    linearLayoutManager.orientation = VERTICAL
     binding?.recyclerView?.layoutManager = linearLayoutManager
     binding?.recyclerView?.setHasFixedSize(true)
     binding?.recyclerView?.adapter = this.adapter
@@ -117,7 +117,7 @@ class TarotLectureFragment : Fragment() {
   }
 
   private fun handleRender(listCardsLecture: List<ArcanaCardVO>) {
-
+    adapter.submitList(listCardsLecture)
   }
 
 }

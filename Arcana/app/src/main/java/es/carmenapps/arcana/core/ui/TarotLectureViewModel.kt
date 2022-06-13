@@ -1,16 +1,13 @@
 package es.carmenapps.arcana.core.ui
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import es.carmenapps.arcana.data.model.ArcanaCardBO
 import es.carmenapps.arcana.data.model.toVo
-import es.carmenapps.arcana.data.remote.toBo
 import es.carmenapps.arcana.data.repository.ArcanaRepository
-import es.carmenapps.arcana.data.result.*
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -33,8 +30,10 @@ class TarotLectureViewModel @Inject constructor(
       val cardsLecture = repository.getRandomCards(4)
       val lisCardLecture = cardsLecture.map { it.toVo() }
 
-      viewModelScope.launch {
+      if (lisCardLecture.isNotEmpty()) {
         _tarotLectureState.postValue(TarotLectureState.Render(lisCardLecture))
+      } else {
+        _tarotLectureState.postValue(TarotLectureState.Error)
       }
     }
   }
