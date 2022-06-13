@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.VERTICAL
+import dagger.hilt.android.AndroidEntryPoint
 import es.carmenapps.arcana.MainNavGraphDirections
 import es.carmenapps.arcana.TarotLectureAdapterAction
 import es.carmenapps.arcana.core.adapter.HomeAdapter
@@ -20,11 +21,11 @@ import es.carmenapps.arcana.core.adapter.TarotLectureAdapter
 import es.carmenapps.arcana.core.ui.vo.ArcanaCardVO
 import es.carmenapps.arcana.databinding.TarotLectureFragmentBinding
 
+@AndroidEntryPoint
 class TarotLectureFragment : Fragment() {
-
-
   private var binding: TarotLectureFragmentBinding? = null
   private val viewModel: TarotLectureViewModel by viewModels()
+
   private lateinit var navController: NavController
   private val adapter by lazy {
     TarotLectureAdapter(::adapterListener)
@@ -37,8 +38,6 @@ class TarotLectureFragment : Fragment() {
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    // val homeViewModel =
-    //   ViewModelProvider(this)[HomeViewModel::class.java]
     navController = findNavController()
     binding = TarotLectureFragmentBinding.inflate(inflater, container, false)
     return binding!!.root

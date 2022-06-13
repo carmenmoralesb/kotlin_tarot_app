@@ -1,6 +1,7 @@
 package es.carmenapps.arcana.core.ui
 
 import androidx.lifecycle.*
+import dagger.hilt.android.lifecycle.HiltViewModel
 import es.carmenapps.arcana.data.model.ArcanaCardBO
 import es.carmenapps.arcana.data.model.toVo
 import es.carmenapps.arcana.data.remote.toBo
@@ -12,6 +13,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
+@HiltViewModel
 class TarotLectureViewModel @Inject constructor(
   private val repository: ArcanaRepository,
 ) : ViewModel() {
@@ -28,28 +30,7 @@ class TarotLectureViewModel @Inject constructor(
 
   private fun retrieveLecture() {
     viewModelScope.launch {
-      var cardsLecture = listOf<ArcanaCardBO>()
-
-      repository.getRandomCards(4).asFlow().collect { value ->
-        when (value) {
-          is ArcanaCardsSuccess -> {
-            cardsLecture = value.cards.map { it.toBo() }
-          }
-          is ArcanaCardError -> {
-            Timber.d("Error en la lectura")
-          }
-          is ArcanaCardSuccess -> {
-            Timber.d("Error en la lectura")
-          }
-          is ArcanaCardsError -> {
-            Timber.d("Error en la lectura")
-          }
-          Loading -> {
-
-          }
-        }
-      }
-
+      val cardsLecture = repository.getRandomCards(4)
       val lisCardLecture = cardsLecture.map { it.toVo() }
 
       viewModelScope.launch {

@@ -2,7 +2,15 @@ package es.carmenapps.arcana.data.remote
 
 import com.google.gson.annotations.SerializedName
 import es.carmenapps.arcana.data.model.ArcanaCardBO
-import es.carmenapps.arcana.data.model.CardPhoto
+import es.carmenapps.arcana.data.model.TarotHitBO
+import es.carmenapps.arcana.data.model.getCardPhoto
+
+data class TarotHitDTO(
+  @SerializedName("nhits")
+  val nhits: Int,
+  @SerializedName("cards")
+  val cards: List<ArcanaCardDTO>
+)
 
 data class ArcanaCardDTO(
   @SerializedName("name")
@@ -12,7 +20,7 @@ data class ArcanaCardDTO(
   @SerializedName("value")
   val value: String,
   @SerializedName("suit")
-  val suit: String,
+  val suit: String?,
   @SerializedName("type")
   val type: String,
   @SerializedName("meaning_up")
@@ -23,13 +31,16 @@ data class ArcanaCardDTO(
   val desc: String,
 )
 
-fun ArcanaCardDTO.toBo(): ArcanaCardBO  {
-  val getImage = CardPhoto.valueOf(this.name_short)
+fun TarotHitDTO.toBo(): TarotHitBO {
+  return TarotHitBO(listCards = this.cards.map { it.toBo() })
+}
+
+fun ArcanaCardDTO.toBo(): ArcanaCardBO {
   return ArcanaCardBO(
     name = this.name,
-    image = getImage.resource,
+    image = getCardPhoto(this.name_short),
     value = this.value,
-    suit = this.suit,
+    suit = this.suit ?: "",
     type = this.type,
     description = this.desc,
     meaningUp = this.meaningUp,

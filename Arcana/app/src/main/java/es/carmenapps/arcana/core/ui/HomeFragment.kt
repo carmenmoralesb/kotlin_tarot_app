@@ -43,8 +43,6 @@ class HomeFragment : Fragment() {
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    // val homeViewModel =
-    //   ViewModelProvider(this)[HomeViewModel::class.java]
     navController = findNavController()
     binding = FragmentHomeBinding.inflate(inflater, container, false)
     return binding!!.root

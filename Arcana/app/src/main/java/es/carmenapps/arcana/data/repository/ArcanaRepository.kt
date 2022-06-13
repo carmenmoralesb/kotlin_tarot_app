@@ -1,39 +1,37 @@
 package es.carmenapps.arcana.data.repository
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.liveData
+import es.carmenapps.arcana.data.model.ArcanaCardBO
+import es.carmenapps.arcana.data.model.TarotHitBO
 import es.carmenapps.arcana.data.remote.toBo
-import es.carmenapps.arcana.data.result.*
 import es.carmenapps.arcana.network.ArcanaApi
-import kotlinx.coroutines.Dispatchers
+import timber.log.Timber
+import javax.inject.Inject
 
-class ArcanaRepository(private val arcanaApi: ArcanaApi) {
+class ArcanaRepository @Inject constructor(
+  private val remoteService: ArcanaApi
+) {
+  suspend fun getAllCards(): List<ArcanaCardBO> {
+    val cards = mutableListOf<ArcanaCardBO>()
+    val resource = remoteService.getCards()
 
-  fun getCards(): LiveData<ArcanaResult> = liveData(Dispatchers.IO) {
-    emit(Loading)
-    try {
-      emit(ArcanaCardsSuccess(arcanaApi.getCards()))
-    } catch (e: Exception) {
-      emit(ArcanaCardsError(e))
+    if (resource.isNotEmpty()) {
+      cards.addAll(
+        resource.map { it.toBo() }
+      )
     }
+    return cards
   }
 
-  fun getCard(id: Int): LiveData<ArcanaResult> = liveData(Dispatchers.IO) {
-    emit(Loading)
-    try {
-      emit(ArcanaCardSuccess(arcanaApi.getCard(id)))
-    } catch (e: Exception) {
-      emit(ArcanaCardError(e))
-    }
+  suspend fun getRandomCards(numberRandom: Int): List<ArcanaCardBO> {
+    val cards = mutableListOf<ArcanaCardBO>()
+    val resource = remoteService.getRandomCards(numberRandom).toBo()
+    Timber.d("Cartas randomizadas  + ${cards.firstOrNull()?.description}")
+
+    return resource.listCards
   }
 
-  fun getRandomCards(nhit: Int): LiveData<ArcanaResult> = liveData(Dispatchers.IO) {
-    emit(Loading)
-    try {
-      emit(ArcanaCardsSuccess(arcanaApi.getRandomCards(nhit)))
-    } catch (e: Exception) {
-      emit(ArcanaCardsError(e))
-    }
+  suspend fun getOneCard(id: Int): ArcanaCardBO {
+    val resource = remoteService.getCard(id)
+    return resource.toBo()
   }
-
 }

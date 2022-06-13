@@ -11,8 +11,6 @@ import javax.inject.Inject
 class HoroscopeListViewModel @Inject constructor(
   //private val repository: Repository,
 ) : ViewModel() {
-
-
   private val _horoscopeListState = MutableLiveData<HoroscopeListState>()
   val horoscopeListState: LiveData<HoroscopeListState>
     get() = _horoscopeListState
