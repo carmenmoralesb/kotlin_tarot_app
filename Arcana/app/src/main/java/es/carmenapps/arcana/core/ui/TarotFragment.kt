@@ -18,6 +18,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import es.carmenapps.arcana.MainNavGraphDirections
 import es.carmenapps.arcana.core.adapter.HomeAdapter
 import es.carmenapps.arcana.databinding.TarotFragmentBinding
 import es.carmenapps.arcana.util.APP_NAME
@@ -51,6 +52,11 @@ class TarotFragment : Fragment() {
 
   override fun onResume() {
     super.onResume()
+    binding?.buttonGoToLecture?.setOnClickListener {
+      navController.navigate(
+        MainNavGraphDirections.goToTarotLecture()
+      )
+    }
   }
 
   override fun onDestroyView() {
@@ -62,9 +68,11 @@ class TarotFragment : Fragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     initViewModel()
-    binding?.buttonGoToLecture?.setOnClickListener {
+  }
 
-    }
+  override fun onPause() {
+    super.onPause()
+    viewModel.randomUrls.clear()
   }
 
   private fun adapterListener(actions: HoroscopeListAdapterAction) {
@@ -110,11 +118,6 @@ class TarotFragment : Fragment() {
     } else {
       binding?.errorScreen?.root?.visibility = View.GONE
     }
-  }
-
-  override fun onPause() {
-    super.onPause()
-    viewModel.randomUrls.clear()
   }
 
   private fun handleRender() {

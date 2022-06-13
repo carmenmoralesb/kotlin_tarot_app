@@ -23,6 +23,10 @@
 
   </action>
 
+  <action
+    android:id="@+id/goToTarotLecture"
+    app:destination="@id/TarotLectureFragment" />
+
   <fragment
     android:id="@+id/HomeFragment"
     android:name="es.carmenapps.arcana.core.ui.HomeFragment"
