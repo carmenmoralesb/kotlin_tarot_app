@@ -119,16 +119,16 @@ class TarotFragment : Fragment() {
 
   private fun handleRender() {
     binding?.cardOne?.setOnClickListener {
+      // Past
       setAnimation(binding?.cardOne, viewModel.randomUrls.get(0))
     }
     binding?.cardTwo?.setOnClickListener {
+      // Present
       setAnimation(binding?.cardTwo, viewModel.randomUrls.get(1))
     }
     binding?.cardThree?.setOnClickListener {
+      // Prediction
       setAnimation(binding?.cardThree, viewModel.randomUrls.get(2))
-    }
-    binding?.cardFour?.setOnClickListener {
-      setAnimation(binding?.cardFour, viewModel.randomUrls.get(3))
     }
   }
 

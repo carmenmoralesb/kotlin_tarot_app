@@ -1,7 +1,8 @@
-package es.carmenapps.arcana.data.remote
+package es.carmenapps.arcana.data.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
+import es.carmenapps.arcana.data.remote.toBo
 import es.carmenapps.arcana.data.result.*
 import es.carmenapps.arcana.network.ArcanaApi
 import kotlinx.coroutines.Dispatchers
