@@ -27,7 +27,7 @@ class TarotLectureViewModel @Inject constructor(
 
   private fun retrieveLecture() {
     viewModelScope.launch {
-      val cardsLecture = repository.getRandomCards(4)
+      val cardsLecture = repository.getRandomCards(3)
       val lisCardLecture = cardsLecture.map { it.toVo() }
 
       if (lisCardLecture.isNotEmpty()) {

@@ -45,14 +45,8 @@ class TarotLectureFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    initRecycler()
     initViewModel()
-  }
-
-  override fun onResume() {
-    super.onResume()
     initRecycler()
-    initViewModel()
   }
 
   override fun onDestroyView() {
@@ -62,7 +56,6 @@ class TarotLectureFragment : Fragment() {
 
   override fun onPause() {
     super.onPause()
-    // viewModel.randomUrls.clear()
   }
 
   private fun adapterListener(actions: TarotLectureAdapterAction) {
@@ -80,6 +73,7 @@ class TarotLectureFragment : Fragment() {
   }
 
   private fun initViewModel() {
+    viewModel.init()
     viewModel.tarotLectureState.observe(viewLifecycleOwner) { state ->
       when (state) {
         TarotLectureState.Error -> {
@@ -97,7 +91,6 @@ class TarotLectureFragment : Fragment() {
         }
       }
     }
-    viewModel.init()
   }
 
   private fun showLoading(boolean: Boolean) {
