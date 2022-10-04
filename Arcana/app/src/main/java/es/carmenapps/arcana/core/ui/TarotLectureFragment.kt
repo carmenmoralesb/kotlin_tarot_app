@@ -68,7 +68,6 @@ class TarotLectureFragment : Fragment() {
   private fun initRecycler() {
     val linearLayoutManager = LinearLayoutManager(context)
     binding?.recyclerView?.layoutManager = linearLayoutManager
-    binding?.recyclerView?.setHasFixedSize(true)
     binding?.recyclerView?.adapter = this.adapter
   }
 
